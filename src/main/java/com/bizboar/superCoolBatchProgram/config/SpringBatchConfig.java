@@ -52,7 +52,8 @@ public class SpringBatchConfig {
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
         lineTokenizer.setDelimiter(",");
         lineTokenizer.setStrict(false);
-        lineTokenizer.setNames("RAL", "RGB", "HEX", "CMYK", "LRV","English");
+        lineTokenizer.setNames("RAL", "RGB", "HEX", "CMYK", "LRV","English"
+        );
 
         BeanWrapperFieldSetMapper<RALClassicColors> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
         fieldSetMapper.setTargetType(RALClassicColors.class);

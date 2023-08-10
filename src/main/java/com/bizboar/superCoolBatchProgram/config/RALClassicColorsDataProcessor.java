@@ -5,36 +5,30 @@ import org.springframework.batch.item.ItemProcessor;
 
 public class RALClassicColorsDataProcessor implements ItemProcessor<RALClassicColors, RALClassicColors> {
 
-//    @Override
-//    public RALClassicColors process(RALClassicColors item) throws Exception {
-//        return null;
-//    }
     @Override
     public RALClassicColors process(RALClassicColors item) throws Exception {
-        // Perform processing logic
-        String originalColorName = item.getEnglish();
-        String uppercaseColorName = originalColorName.toUpperCase();
-        String originalHex = item.getHex();
+        String processedColorName = processColorName(item.getEnglish());
+        item.setEnglish(processedColorName);
 
-
-        // Create a new RALClassicColors instance with the processed color name
-        RALClassicColors processedItem = new RALClassicColors();
-        processedItem.setRal(item.getRal());
-        processedItem.setEnglish(uppercaseColorName);
-        processedItem.setHex(originalHex);
-
-        return processedItem;
+//        double processedLRVCategory = Double.parseDouble(processLRVCategory(item.getLrv()));
+//        item.setLrvCategory(String.valueOf(processedLRVCategory));
+        return item;
     }
 
+    private String processColorName(String originalColorName) {
+        return originalColorName.toLowerCase();
+    }
 
-
-//    @Override
-//    public RALClassicColors process(RALClassicColors RALClassicColors) throws Exception {
-//        if (RALClassicColors.getRal().equals("1000")) {
-//            return RALClassicColors;
-//        } else {
-//            return null;
-//        }
+//    private String processLRVCategory(String lrv) {
+//        double lrvValue = Double.parseDouble(lrv);
 //
+//        if (lrvValue >= 70.0) {
+//            return "High";
+//        } else if (lrvValue >= 50.0) {
+//            return "Medium";
+//        } else {
+//            return "Low";
+//        }
 //    }
+
 }

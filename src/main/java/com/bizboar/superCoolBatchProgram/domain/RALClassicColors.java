@@ -32,6 +32,9 @@ public class RALClassicColors {
     @Column(name = "LRV")
     private String lrv;
 
+//    @Transient
+//    private String lrvCategory;
+
     @Column(name = "English")
     private String english;
 
@@ -82,6 +85,14 @@ public class RALClassicColors {
     public void setLrv(String lrv) {
         this.lrv = lrv;
     }
+
+//    public String getLrvCategory() {
+//        return lrvCategory;
+//    }
+//
+//    public void setLrvCategory(String lrvCategory) {
+//        this.lrvCategory = lrvCategory;
+//    }
 
     public String getEnglish() {
         return english;
