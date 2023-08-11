@@ -10,8 +10,7 @@ public class RALClassicColorsDataProcessor implements ItemProcessor<RALClassicCo
         String processedColorName = processColorName(item.getEnglish());
         item.setEnglish(processedColorName);
 
-//        double processedLRVCategory = Double.parseDouble(processLRVCategory(item.getLrv()));
-//        item.setLrvCategory(String.valueOf(processedLRVCategory));
+        item.setLrvCategory(processLRVCategory(item.getLrv()));
         return item;
     }
 
@@ -19,16 +18,15 @@ public class RALClassicColorsDataProcessor implements ItemProcessor<RALClassicCo
         return originalColorName.toLowerCase();
     }
 
-//    private String processLRVCategory(String lrv) {
-//        double lrvValue = Double.parseDouble(lrv);
-//
-//        if (lrvValue >= 70.0) {
-//            return "High";
-//        } else if (lrvValue >= 50.0) {
-//            return "Medium";
-//        } else {
-//            return "Low";
-//        }
-//    }
+    private String processLRVCategory(Double lrv) {
+
+        if (lrv >= 70.0) {
+            return "High";
+        } else if (lrv >= 50.0) {
+            return "Medium";
+        } else {
+            return "Low";
+        }
+    }
 
 }

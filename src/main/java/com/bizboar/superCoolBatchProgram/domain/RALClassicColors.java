@@ -20,20 +20,20 @@ public class RALClassicColors {
     @Column(name = "RAL")
     private String ral;
 
-    @Column(name = "RGB")
+    @Transient
     private String rgb;
 
     @Column(name = "HEX")
     private String hex;
 
-    @Column(name = "CMYK")
+    @Transient
     private String cmyk;
 
-    @Column(name = "LRV")
-    private String lrv;
+   @Transient
+    private Double lrv;
 
-//    @Transient
-//    private String lrvCategory;
+    @Column(name = "LRV")
+    private String lrvCategory;
 
     @Column(name = "English")
     private String english;
@@ -78,21 +78,21 @@ public class RALClassicColors {
         this.cmyk = cmyk;
     }
 
-    public String getLrv() {
+    public Double getLrv() {
         return lrv;
     }
 
-    public void setLrv(String lrv) {
+    public void setLrv(Double lrv) {
         this.lrv = lrv;
     }
 
-//    public String getLrvCategory() {
-//        return lrvCategory;
-//    }
-//
-//    public void setLrvCategory(String lrvCategory) {
-//        this.lrvCategory = lrvCategory;
-//    }
+    public String getLrvCategory() {
+        return lrvCategory;
+    }
+
+    public void setLrvCategory(String lrvCategory) {
+        this.lrvCategory = lrvCategory;
+    }
 
     public String getEnglish() {
         return english;
