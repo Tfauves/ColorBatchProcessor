@@ -1,7 +1,6 @@
 package com.bizboar.superCoolBatchProgram.models;
 
 public class ColorDTO {
-
     private String name;
     private String hex;
     private String lrv;
