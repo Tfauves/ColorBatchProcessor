@@ -5,17 +5,22 @@ import com.bizboar.superCoolBatchProgram.models.ColorDTO;
 import com.bizboar.superCoolBatchProgram.repositories.RALClassicColorsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.awt.*;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
+@RestController
+@RequestMapping("/public/api/color")
 public class ColorController {
 
     @Autowired
     private RALClassicColorsRepository colorsRepository;
 
+    @GetMapping
+    public @ResponseBody List<RALClassicColors> getAllColors() {
+        return colorsRepository.findAll();
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<ColorDTO> getColorById(@PathVariable Long id) {
