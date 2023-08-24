@@ -9,7 +9,7 @@ public class RALClassicColorsDataProcessor implements ItemProcessor<RALClassicCo
     public RALClassicColors process(RALClassicColors item) throws Exception {
         String processedColorName = processColorName(item.getEnglish());
         item.setEnglish(processedColorName);
-
+        item.setFeatured(false);
         item.setLrvCategory(processLRVCategory(item.getLrv()));
         return item;
     }

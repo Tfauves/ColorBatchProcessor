@@ -38,6 +38,10 @@ public class RALClassicColors {
     @Column(name = "English")
     private String english;
 
+    @Column(name = "Featured")
+    private Boolean isFeatured;
+
+
     public Long getId() {
         return id;
     }
@@ -102,4 +106,12 @@ public class RALClassicColors {
         this.english = english;
     }
 
+
+    public Boolean getFeatured() {
+        return isFeatured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        isFeatured = featured;
+    }
 }

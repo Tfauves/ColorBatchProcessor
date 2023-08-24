@@ -4,14 +4,17 @@ public class ColorDTO {
     private String name;
     private String hex;
     private String lrv;
+    private String ralNum;
+    private Boolean isFeatured;
 
     public ColorDTO() {
     }
 
-    public ColorDTO(String name, String hex, String lrv) {
+    public ColorDTO(String name, String hex, String lrv, String ralNum) {
         this.name = name;
         this.hex = hex;
         this.lrv = lrv;
+        this.ralNum = ralNum;
     }
 
     public String getName() {
@@ -36,5 +39,21 @@ public class ColorDTO {
 
     public void setLrv(String lrv) {
         this.lrv = lrv;
+    }
+
+    public String getRalNum() {
+        return ralNum;
+    }
+
+    public void setRalNum(String ralNum) {
+        this.ralNum = ralNum;
+    }
+
+    public Boolean getFeatured() {
+        return isFeatured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        isFeatured = featured;
     }
 }
